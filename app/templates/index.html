@@ -1,0 +1,93 @@
+{% extends 'base.html'%}
+
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
+
+<style>
+    *{
+        background-color: antiquewhite;
+    }
+</style>
+<body style='background-color: antiquewhite;'>
+{%block content %}
+<nav class="navbar navbar-light bg-light">
+    <div class="container">
+        {% if current_user.is_authenticated %}
+        <p><a class="navbar-brand navbar-right" href="{{url_for('main.home',user=current_user.username)}}">You are Logged in as: {{current_user.username}}</a></p>
+        {% else %}
+        <p><a class="nav-link" href="{{url_for('auth.login')}}" style='margin-right:30px'><i
+            class="fas fa-sign-in-alt"></i>&nbsp; <strong>Log In</strong></a></p>
+        {%endif%}
+        <!-- <img src="images/work.jpg" alt="" width="30" height="24"> -->
+        </a>
+    </div>
+</nav>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 ">
+            
+        </div>
+        <div class="md-col-6">
+            <div class="col-md-4">
+                <img src="../static/img/HRM.png" class="img2" alt="logo"> <br>
+                
+                <table class="table table-hover">
+                    <thead>
+                    <tr>
+                    </tr>
+                    </thead>
+
+                    </tr>
+                    </tfoot>
+                    <tbody>
+                    <tr>
+                        
+                    <td>Name: </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>Position:</td>
+                    </tr>
+                    <tr>
+                        <td>Job_Id:</td>
+                    </tr>
+                    <tr>
+                        <td>Department:</td>
+                       
+                    </tr>
+                    </tbody>
+                    </table>
+
+            </div>
+            <div class="col-md-4">
+                
+                <div class="panel panel-success">
+                <div class="panel-heading">
+                <h1 class="panel-title">Awards</h1>
+                </div>
+                <div class="panel-body">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+                </div>
+                </div>
+                
+                <div class="panel panel-info">
+                <div class="panel-heading">
+                <h1 class="panel-title">Experience</h1>
+                </div>
+                <div class="panel-body">
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.
+                </div>
+                </div>
+
+        </div>
+        <div class="col-md-4">
+            <h2>List of employees</h2>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+{% endblock %}

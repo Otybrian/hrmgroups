@@ -1,0 +1,29 @@
+#first {
+    background-color: pink;
+    height: 100px;
+    width: 100px;
+  }
+  #first:after {
+    content: "";
+    background-color: rgb(116, 241, 33);
+    position: absolute;
+    width: 5px;
+    height: 100px;
+    top: 10px;
+    left: 50%;
+    display: block;
+  }
+  #second {
+    background-color: brown;
+    height: 100px;
+    width: 100px;
+  }
+  .img{
+      height: 90px;
+  }
+  .img2{
+      height: 150px;
+  }
+  *{
+    background-color: antiquewhite;
+  }

@@ -1,0 +1,44 @@
+{% extends 'base.html'%}
+<style>
+  * {
+    background-color: antiquewhite;
+  }
+</style>
+{% block content %}
+
+<body style='background-color: antiquewhite;'>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4"  style='margin-left: 100px'>
+            <img src="../static/img/HRM.png" class="img2" alt="logo"> <br>
+      </div>
+       
+        <div class="col-md-4"  style='margin-left: 100px'>
+          {% if user == current_user %}
+          {% if user.profile_pic_path %}
+          <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" height="200px">
+          {%else%}
+          <img src="{{url_for('static',filename='logo-removebg-preview.png')}}" alt="" height="100px">
+          <p>Upload your Profile picture for your friends to identify you easily</p>
+          {% endif %}
+        {% endif %}
+          <h3> {{current_user.username| capitalize}} </h3>
+          {% if current_user.bio %}
+          <p><button class="btn-outline-info">My bio:</button> {{user.bio}}</p>
+          {%else%}
+          <p> Hello:  {{current_user.username| capitalize}} you have no bio </p>
+          {% endif %}
+          
+          <a href='/updatedashboard'>Add Bio</a>
+          <p>Want to add a profile picture?</p>
+
+          <input type="file" name="photo" class="form-control" required>
+          <input type="submit">
+          </form>
+          
+          </div>
+      </div>
+    </div>
+  </div>
+</body>
+{% endblock %}

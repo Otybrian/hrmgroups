@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+<style>
+    *{
+        background-color: antiquewhite;
+    }
+</style>
+{% block content %}
+<body style=' background-color: antiquewhite;'>
+<div class='container'>
+    <div class='row'>
+        <div class="col-md-6">
+            <div class="col-md-4">
+                <img src="../static/img/HRM.png" class="img2" alt="logo"> <br>
+            </div>
+        </div>
+        <div class='col-md-6'>
+            {% for leave in leave %}
+            <card> <h3>Reason for leave</h3> <p> Reason: {{ leave.content}}</p></card>
+            <p>Your leave request will be approved and an email sent to you</p>
+            {% endfor %}
+            <button type="submit" style='color:blue'><a href="/create_leave" style='text-decoration: none'>Apply for Leave</a></button>
+        </div>
+    </div>
+</div>
+</body>
+
+{% endblock %}

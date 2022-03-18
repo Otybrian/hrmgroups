@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to HRM-GROUP
+Here, we value our employees and treat them as partners. Thank you for patnering with us. We are looking forward to working with you and helping you grow with us. Again! Welcome onboard.

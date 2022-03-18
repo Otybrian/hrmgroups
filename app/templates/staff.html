@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+<style>
+    *{
+        background-color: antiquewhite;
+    }
+</style>
+{% block content %}
+<div class="container">
+    {% for user in users %}
+    <center><h2>Staff Members</h2></center>
+<ul>
+    <li>{{user.username}}</li>
+</ul>
+    {% endfor %}
+</div>
+{% endblock %}
